@@ -1,17 +1,34 @@
 # Ashish Kumar Chaudhary — Developer Portfolio
 
-Angular standalone frontend + ASP.NET Core Web API backend.
+A responsive, animated developer portfolio built with Angular. The portfolio is a static frontend and does not require an ASP.NET Core backend or database.
 
 ## Run locally
-- Install Node.js and .NET 10 SDK.
-- API: `cd backend/AshishPortfolio.Api && dotnet run`
-- Frontend: `cd frontend && npm install && npm start`
-- Open http://localhost:4200. If the API selects a different port, update `frontend/src/environments/environment.ts`.
 
-## Hosting
-- Frontend: GitHub Pages (publish `frontend/dist/ashish-portfolio/browser` after `npm run build`).
-- API: Render Web Service using `backend/AshishPortfolio.Api/Dockerfile`.
-- Set Angular `apiUrl` to the deployed API + `/api`, and configure API `AllowedOrigins` to your exact GitHub Pages origin.
-- Free hosting limits can change; Render free instances may sleep while idle.
+1. Install Node.js (LTS).
+2. Open a terminal in the `frontend` directory.
+3. Install dependencies and start Angular:
 
-The contact endpoint validates and logs submissions only. It does not send email or store messages permanently. Add persistent storage and an email provider before production use. Verify your public contact details and project URLs before deployment.
+```bash
+npm install
+npm start
+```
+
+Open http://localhost:4200.
+
+## Build
+
+From the `frontend` directory:
+
+```bash
+npm run build
+```
+
+The production build is generated under `frontend/dist/ashish-portfolio/browser`.
+
+## Deployment
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for static hosting instructions.
+
+## Contact form
+
+The contact form opens the visitor's default email application with the message prefilled. It does not submit to a server or store messages. Visitors must send the email themselves.
