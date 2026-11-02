@@ -1,11 +1,12 @@
 import { Component, AfterViewInit, OnDestroy } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
+import { ResumeConverterComponent } from "./resume-converter.component";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ResumeConverterComponent],
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
