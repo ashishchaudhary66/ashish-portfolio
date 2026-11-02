@@ -8,6 +8,7 @@
       >Experience</a
     ><a href="#skills" (click)="navigateTo($event, 'skills')">Skills</a
     ><a href="#projects" (click)="navigateTo($event, 'projects')">Projects</a
+    ><a href="#resume" (click)="navigateTo($event, 'resume')">Resume PDF</a
     ><a class="navbtn" href="#contact" (click)="navigateTo($event, 'contact')"
       >Let's talk ↗</a
     >
@@ -61,6 +62,7 @@
     </div>
     <a class="scroll" href="#about">↓ &nbsp; SCROLL TO EXPLORE</a>
   </section>
+  <app-resume-converter></app-resume-converter>
   <section id="about" class="wrap block reveal">
     <small class="kicker">01 / ABOUT ME</small>
     <div class="heading">
