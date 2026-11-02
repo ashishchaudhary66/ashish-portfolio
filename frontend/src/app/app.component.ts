@@ -38,6 +38,16 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.observer?.disconnect();
   }
 
+  navigateTo(event: Event, sectionId: string): void {
+    event.preventDefault();
+    this.menu = false;
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    section.classList.add('visible');
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.history.replaceState(null, '', '#' + sectionId);
+  }
+
   send(): void {
     this.status = '';
     this.error = false;
