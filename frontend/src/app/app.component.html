@@ -330,31 +330,48 @@
           >
         </div>
         <form #f="ngForm" (ngSubmit)="send()">
-          <label
-            >Your name<input
+          <label>
+            Your name
+            <input
               name="name"
               [(ngModel)]="form.name"
               required
               minlength="2"
-              placeholder="Jane Smith" /></label
-          ><label
-            >Email address<input
+              placeholder="e.g. Jane Smith"
+              #nameField="ngModel"
+              aria-describedby="name-hint"
+            />
+            <small class="field-hint" id="name-hint">Enter at least 2 characters.</small>
+          </label>
+          <label>
+            Email address
+            <input
               name="email"
               [(ngModel)]="form.email"
               required
               email
               type="email"
-              placeholder="jane@example.com" /></label
-          ><label
-            >Message<textarea
+              placeholder="e.g. jane@example.com"
+              #emailField="ngModel"
+              aria-describedby="email-hint"
+            />
+            <small class="field-hint" id="email-hint">Enter a valid email address, such as name@example.com.</small>
+          </label>
+          <label>
+            Message
+            <textarea
               name="message"
               [(ngModel)]="form.message"
               required
               minlength="10"
               rows="3"
-              placeholder="Tell me a little about what you have in mind..."
-            ></textarea></label
-          ><button class="btn" [disabled]="sending || !f.valid">
+              placeholder="Briefly describe your project or enquiry (at least 10 characters)..."
+              #messageField="ngModel"
+              aria-describedby="message-hint"
+            ></textarea>
+            <small class="field-hint" id="message-hint">Write at least 10 characters so I have enough context to respond.</small>
+          </label>
+          <button class="btn" [disabled]="sending || !f.valid">
             {{ sending ? "Sending..." : "Send message ↗" }}
           </button>
         </form>
