@@ -1,9 +1,54 @@
-import {Component,AfterViewInit,OnDestroy,inject} from '@angular/core';
-import {CommonModule} from '@angular/common'; import {FormsModule} from '@angular/forms'; import {PortfolioService} from './portfolio.service';
-@Component({selector:'app-root',standalone:true,imports:[CommonModule,FormsModule],templateUrl:'./app.component.html',styleUrls:['./app.component.css']})
-export class AppComponent implements AfterViewInit,OnDestroy{
- private api=inject(PortfolioService); year=new Date().getFullYear(); menu=false; sending=false; status=''; error=false; form={name:'',email:'',message:''}; private observer?:IntersectionObserver;
- ngAfterViewInit(){this.observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');this.observer?.unobserve(e.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>this.observer?.observe(x));}
- ngOnDestroy(){this.observer?.disconnect();}
- send(){this.sending=true;this.status='';this.error=false;this.api.sendMessage(this.form).subscribe({next:()=>{this.status='Thanks! Your message has been received.';this.form={name:'',email:'',message:''};this.sending=false;},error:()=>{this.status='Contact service unavailable. Please email me directly.';this.error=true;this.sending=false;}});}
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements AfterViewInit, OnDestroy {
+  year = new Date().getFullYear();
+  menu = false;
+  sending = false;
+  status = '';
+  error = false;
+  form = { name: '', email: '', message: '' };
+  private observer?: IntersectionObserver;
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          this.observer?.unobserve(entry.target);
+        }
+      }),
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll('.reveal').forEach(element => {
+      this.observer?.observe(element);
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.observer?.disconnect();
+  }
+
+  send(): void {
+    this.status = '';
+    this.error = false;
+
+    const recipient = 'ashishkumarchaudhary66@gmail.com';
+    const subject = encodeURIComponent(`Portfolio enquiry from ${this.form.name}`);
+    const body = encodeURIComponent(
+      `Name: ${this.form.name}\nEmail: ${this.form.email}\n\nMessage:\n${this.form.message}`
+    );
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    this.status = 'Your email app should open with your message. Please send it from there.';
+  }
 }
