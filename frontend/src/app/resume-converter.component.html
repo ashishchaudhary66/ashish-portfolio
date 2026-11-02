@@ -1,0 +1,44 @@
+<section id="resume" class="wrap block resume-tool reveal">
+  <small class="kicker">RESUME TOOL / PDF GENERATOR</small>
+  <div class="heading">
+    <h2>My resume, <em>your format.</em></h2>
+    <p>Choose a LaTeX resume and compile it into a PDF.</p>
+  </div>
+
+  <div class="converter-card">
+    <div class="converter-copy">
+      <div class="file-icon">TEX</div>
+      <div>
+        <h3>LaTeX to PDF converter</h3>
+        <p>Select the resume version you want. The latest source is loaded from my GitHub repository and compiled online.</p>
+      </div>
+    </div>
+
+    <label class="select-label" for="resume-choice">Choose a resume</label>
+    <select id="resume-choice" [(ngModel)]="selectedId" (ngModelChange)="onResumeChange()">
+      <option *ngFor="let resume of resumes" [value]="resume.id">{{ resume.name }}</option>
+    </select>
+
+    <div class="file-meta">
+      <span><i></i> {{ selectedResume.fileName }}</span>
+      <a [href]="selectedResume.url" target="_blank" rel="noreferrer">View LaTeX source ↗</a>
+    </div>
+
+    <div class="converter-actions">
+      <button class="convert-btn" type="button" (click)="generatePdf()" [disabled]="generating">
+        {{ generating ? 'Preparing PDF…' : 'Compile to PDF ↗' }}
+      </button>
+      <button class="open-btn" type="button" (click)="openPdf()" [disabled]="!pdfUrl">Open PDF in new tab</button>
+    </div>
+
+    <p class="privacy-note">The LaTeX source is hosted publicly in GitHub and sent by URL to Pressa's online compiler. Avoid using this tool for private documents.</p>
+  </div>
+
+  <div class="pdf-preview" *ngIf="safePdfUrl">
+    <div class="preview-heading">
+      <div><span class="ready-dot"></span><b>PDF preview</b><small>{{ selectedResume.fileName }}</small></div>
+      <button type="button" (click)="openPdf()">Open / Download ↗</button>
+    </div>
+    <iframe [src]="safePdfUrl" title="Compiled resume PDF preview"></iframe>
+  </div>
+</section>
