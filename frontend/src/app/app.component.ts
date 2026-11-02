@@ -63,6 +63,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
     this.status =
-      "Your email app should open with your message. Please send it from there.";
+      "Thanks for reaching out! Your message is ready in your email app. Please click Send there to complete your enquiry.";
   }
 }
