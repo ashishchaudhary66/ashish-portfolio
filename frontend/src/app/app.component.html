@@ -357,7 +357,6 @@
           ><button class="btn" [disabled]="sending || !f.valid">
             {{ sending ? "Sending..." : "Send message ↗" }}
           </button>
-          <p class="status" [class.err]="error" *ngIf="status">{{ status }}</p>
         </form>
       </div>
     </div>

@@ -13,7 +13,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   year = new Date().getFullYear();
   menu = false;
   sending = false;
-  status = "";
   error = false;
   form = { name: "", email: "", message: "" };
   private observer?: IntersectionObserver;
@@ -50,7 +49,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   send(): void {
-    this.status = "";
     this.error = false;
 
     const recipient = "ashishkumarchaudhary66@gmail.com";
@@ -62,7 +60,5 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     );
 
     window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    this.status =
-      "Thanks for reaching out! Your message is ready in your email app. Please click Send there to complete your enquiry.";
   }
 }
