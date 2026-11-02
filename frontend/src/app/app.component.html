@@ -1,8 +1,6 @@
-<header class="nav"><a class="logo" href="#home"><b>A</b> ashish<span>.</span></a><button class="hamb"
+<header class="nav"><a class="logo" href="#home" (click)="navigateTo($event, 'home')"><b>A</b> ashish<span>.</span></a><button class="hamb"
         (click)="menu=!menu">☰</button>
-    <nav [class.show]="menu"><a href="#about" (click)="menu=false">About</a><a href="#experience"
-            (click)="menu=false">Experience</a><a href="#skills" (click)="menu=false">Skills</a><a href="#projects"
-            (click)="menu=false">Projects</a><a class="navbtn" href="#contact" (click)="menu=false">Let's talk ↗</a>
+    <nav [class.show]="menu"><a href="#about" (click)="navigateTo($event, 'about')">About</a><a href="#experience" (click)="navigateTo($event, 'experience')">Experience</a><a href="#skills" (click)="navigateTo($event, 'skills')">Skills</a><a href="#projects" (click)="navigateTo($event, 'projects')">Projects</a><a class="navbtn" href="#contact" (click)="navigateTo($event, 'contact')">Let's talk ↗</a>
     </nav>
 </header>
 <main id="home">
