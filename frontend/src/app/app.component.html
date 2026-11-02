@@ -1,0 +1,214 @@
+<header class="nav"><a class="logo" href="#home"><b>A</b> ashish<span>.</span></a><button class="hamb"
+        (click)="menu=!menu">☰</button>
+    <nav [class.show]="menu"><a href="#about" (click)="menu=false">About</a><a href="#experience"
+            (click)="menu=false">Experience</a><a href="#skills" (click)="menu=false">Skills</a><a href="#projects"
+            (click)="menu=false">Projects</a><a class="navbtn" href="#contact" (click)="menu=false">Let's talk ↗</a>
+    </nav>
+</header>
+<main id="home">
+    <section class="hero wrap">
+        <div class="hero-copy reveal"><small class="eyebrow"><i></i> AVAILABLE FOR THE RIGHT OPPORTUNITY</small>
+            <p class="hello">Hello, I'm</p>
+            <h1>Ashish Kumar<br><em>Chaudhary.</em></h1>
+            <h2>Full Stack Developer <span>/</span> <small>.NET & Angular</small></h2>
+            <p class="intro">I build reliable backend systems and thoughtful user experiences — turning complex
+                requirements into clean, maintainable applications.</p>
+            <div class="actions"><a class="btn" href="#projects">Explore my work ↗</a><a class="btn ghost"
+                    href="#contact">Get in touch</a></div>
+            <div class="social"><a href="https://github.com/ashishchaudhary66" target="_blank" rel="noreferrer">GitHub
+                    ↗</a><a href="https://www.linkedin.com/in/ashish-kumar-chaudhary-265408254" target="_blank"
+                    rel="noreferrer">LinkedIn ↗</a><span>Kanpur, India</span></div>
+        </div>
+        <div class="hero-art reveal">
+            <div class="orbit"></div>
+            <div class="code">
+                <div class="dots">● <i>●</i> <b>●</b><label>developer.ts</label></div>
+                <pre><span>01</span> <strong>const</strong> developer = {{ '{' }}
+                        <span>02</span>   name: <em>'Ashish'</em>,
+                        <span>03</span>   role: <em>'Full Stack Dev'</em>,
+                        <span>04</span>   frontend: [<em>'Angular'</em>, <em>'React'</em>],
+                        <span>05</span>   backend: [<em>'C#'</em>, <em>'.NET'</em>],
+                        <span>06</span>   cloud: <em>'Azure'</em>,
+                        <span>07</span>   passion: <b>true</b>
+                        <span>08</span> {{ '}' }};
+                        <span>09</span> <strong>readyToBuild</strong>();<i class="cursor"></i></pre>
+            </div>
+            <div class="float f1">⚡ Clean code</div>
+            <div class="float f2">☁ Azure ready</div>
+        </div><a class="scroll" href="#about">↓ &nbsp; SCROLL TO EXPLORE</a>
+    </section>
+    <section id="about" class="wrap block reveal"><small class="kicker">01 / ABOUT ME</small>
+        <div class="heading">
+            <h2>Engineering with <em>purpose.</em></h2>
+            <p>A little about the person behind the code.</p>
+        </div>
+        <div class="about">
+            <div>
+                <h3>I'm a Full Stack Developer with <b>2+ years of experience</b> building enterprise applications
+                    across frontend, backend, and data layers.</h3>
+                <p>Currently at Nagarro, I work with ASP.NET Core, C#, Angular, EF Core, and SQL Server to deliver
+                    maintainable features. I enjoy solving practical engineering problems, improving application
+                    quality, and learning better ways to build software.</p>
+                <div class="education">✦ <div><b>Master of Computer Applications</b><small>Jamia Millia Islamia · CGPA
+                            9.06 · 2022–2024</small></div>
+                </div>
+            </div>
+            <div class="stats">
+                <article><b>2<span>+</span></b><small>Years of experience</small></article>
+                <article><b>3</b><small>Professional teams</small></article>
+                <article><b>95<span>%</span></b><small>Coverage in targeted feature areas</small></article>
+                <article><b>9.06</b><small>MCA CGPA</small></article>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="wrap block reveal"><small class="kicker">02 / EXPERIENCE</small>
+        <div class="heading">
+            <h2>Where I've <em>worked.</em></h2>
+            <p>Building, learning, and shipping with great teams.</p>
+        </div>
+        <div class="timeline">
+            <article><time>SEP 2025 — PRESENT</time>
+                <div>
+                    <h3>Associate Engineer</h3>
+                    <h4>Nagarro <small>· Gurgaon, India</small></h4>
+                    <p>Develop ASP.NET Core Web APIs and reusable Angular components for enterprise applications. Work
+                        across Clean Architecture, EF Core, SQL Server, Azure services, and automated testing.</p>
+                    <label>.NET 10</label><label>C#</label><label>Angular</label><label>EF
+                        Core</label><label>Azure</label><label>xUnit</label>
+                </div>
+            </article>
+            <article><time>DEC 2024 — AUG 2025</time>
+                <div>
+                    <h3>Associate Software Developer</h3>
+                    <h4>Sohan Lal Commodity Management <small>· New Delhi, India</small></h4>
+                    <p>Built business applications using C#, ASP.NET Web Forms, ADO.NET, and SQL Server. Integrated
+                        Google Maps, automated email notifications, and Gemini 1.5 Flash for scanned-document data
+                        extraction.</p><label>C#</label><label>ASP.NET</label><label>ADO.NET</label><label>SQL
+                        Server</label>
+                </div>
+            </article>
+            <article><time>JAN 2024 — NOV 2024</time>
+                <div>
+                    <h3>Software Engineer</h3>
+                    <h4>CNH Industrial <small>· Gurugram, India</small></h4>
+                    <p>Developed admin dashboard features with React and TypeScript, integrated ASP.NET Core APIs, and
+                        supported SQL Server, PostgreSQL, and a modular micro-frontend architecture.</p>
+                    <label>React</label><label>TypeScript</label><label>ASP.NET Core</label><label>REST
+                        APIs</label><label>Azure</label>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="skills" class="wrap block reveal"><small class="kicker">03 / TOOLKIT</small>
+        <div class="heading">
+            <h2>My technical <em>stack.</em></h2>
+            <p>The tools I use to bring ideas to life.</p>
+        </div>
+        <div class="skills">
+            <article><b>⌘</b>
+                <h3>Backend</h3>
+                <p>C# · ASP.NET Core · .NET 10 · Web API · EF Core · LINQ · ADO.NET · Clean Architecture</p>
+            </article>
+            <article><b>◈</b>
+                <h3>Frontend</h3>
+                <p>Angular · Signals · RxJS · TypeScript · React · Hooks · HTML · CSS</p>
+            </article>
+            <article><b>▤</b>
+                <h3>Data</h3>
+                <p>SQL Server · PostgreSQL · MySQL · MongoDB · Stored Procedures</p>
+            </article>
+            <article><b>☁</b>
+                <h3>Cloud & DevOps</h3>
+                <p>Azure App Service · Blob Storage · Service Bus · Event Grid · Azure DevOps · Docker</p>
+            </article>
+            <article><b>✓</b>
+                <h3>Testing</h3>
+                <p>xUnit · Moq · Jasmine · Karma · Unit Testing · Postman · Swagger</p>
+            </article>
+            <article><b>⌬</b>
+                <h3>Engineering</h3>
+                <p>SOLID · OOP · Dependency Injection · Repository Pattern · Async/Await · CI/CD</p>
+            </article>
+        </div>
+    </section>
+    <section id="projects" class="wrap block reveal"><small class="kicker">04 / SELECTED WORK</small>
+        <div class="heading">
+            <h2>Things I've <em>built.</em></h2>
+            <p>A selection of applications and engineering work.</p>
+        </div>
+        <div class="projects">
+            <article>
+                <div class="project-art shop"><small>01 / E-COMMERCE</small>
+                    <div class="mock"><b>SHOP<span>+</span></b>
+                        <div>◫ &nbsp; <strong>Smart Shopping</strong></div>
+                        <hr><i>Discover products · Cart · Checkout</i>
+                    </div>
+                </div>
+                <div class="project-copy"><small>FULL STACK APPLICATION</small>
+                    <h3>Smart Shopping</h3>
+                    <p>E-commerce application with authentication, product browsing, cart, checkout, wishlist, and
+                        transaction history.</p>
+                    <label>React</label><label>Node.js</label><label>MongoDB</label><label>Redux</label><a
+                        href="https://github.com/ashishchaudhary66" target="_blank" rel="noreferrer">Explore on GitHub
+                        ↗</a>
+                </div>
+            </article>
+            <article>
+                <div class="project-art quiz"><small>02 / REAL TIME</small>
+                    <div class="quizbox"><strong>🍍</strong>
+                        <p>Unscramble the word</p><b>P &nbsp; A &nbsp; N &nbsp; E &nbsp; P &nbsp; I &nbsp;
+                            P</b><small>+120 POINTS</small>
+                    </div>
+                </div>
+                <div class="project-copy"><small>REAL-TIME MULTIPLAYER</small>
+                    <h3>Fruit & Vegetable Quiz</h3>
+                    <p>Room-based multiplayer quiz with live question updates, timed answers, and a points-based
+                        leaderboard.</p>
+                    <label>React</label><label>Node.js</label><label>Express</label><label>Socket.IO</label><a
+                        href="https://github.com/ashishchaudhary66" target="_blank" rel="noreferrer">Explore on GitHub
+                        ↗</a>
+                </div>
+            </article>
+        </div>
+        <p class="note">Add direct repository/demo URLs and screenshots when you are ready to make the projects public.
+        </p>
+    </section>
+    <section class="wrap block reveal"><small class="kicker">05 / CREDENTIALS</small>
+        <div class="heading">
+            <h2>Learning never <em>stops.</em></h2>
+        </div>
+        <div class="certs">
+            <article>✧ <div><b>Microsoft Certified: Azure Fundamentals</b><small>Microsoft · October 2024</small></div>
+                <i>AZURE</i>
+            </article>
+            <article>⌘ <div><b>DSA with Java</b><small>Apna College · December 2023</small></div><i>JAVA</i></article>
+            <article>★ <div><b>SOF Cyber Olympiad</b><small>Medal of Distinction · January 2018</small></div>
+                <i>AWARD</i>
+            </article>
+        </div>
+    </section>
+    <section id="contact" class="wrap block contact reveal">
+        <div class="contact-panel"><small class="kicker">06 / GET IN TOUCH</small>
+            <h2>Have a project in<br>mind? <em>Let's talk.</em></h2>
+            <p>I'm open to discussing full-stack opportunities, interesting products, and engineering challenges.</p>
+            <div class="contact-grid">
+                <div class="links"><a
+                        href="mailto:ashishkumarchaudhary66@gmail.com"><small>EMAIL</small>ashishkumarchaudhary66@gmail.com
+                        ↗</a><a href="tel:+916388340458"><small>PHONE</small>+91 63883 40458 ↗</a><a
+                        href="https://www.linkedin.com/in/ashish-kumar-chaudhary-265408254" target="_blank"
+                        rel="noreferrer"><small>LINKEDIN</small>Let's connect ↗</a></div>
+                <form #f="ngForm" (ngSubmit)="send()"><label>Your name<input name="name" [(ngModel)]="form.name"
+                            required minlength="2" placeholder="Jane Smith"></label><label>Email address<input
+                            name="email" [(ngModel)]="form.email" required email type="email"
+                            placeholder="jane@example.com"></label><label>Message<textarea name="message"
+                            [(ngModel)]="form.message" required minlength="10" rows="3"
+                            placeholder="Tell me a little about what you have in mind..."></textarea></label><button
+                        class="btn" [disabled]="sending||!f.valid">{{sending?'Sending...':'Send message ↗'}}</button>
+                    <p class="status" [class.err]="error" *ngIf="status">{{status}}</p>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer"><a class="logo" href="#home"><b>A</b> ashish<span>.</span></a><small>Designed & built with care ·
+        © {{year}} Ashish Kumar Chaudhary</small><a href="#home">Back to top ↑</a></footer>
