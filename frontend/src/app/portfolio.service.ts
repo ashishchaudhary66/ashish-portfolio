@@ -1,1 +1,0 @@
-import { Injectable,inject } from '@angular/core'; import { HttpClient } from '@angular/common/http'; import { environment } from '../environments/environment'; @Injectable({providedIn:'root'}) export class PortfolioService { private http=inject(HttpClient); sendMessage(data:{name:string,email:string,message:string}){return this.http.post(`${environment.apiUrl}/contact`,data);} }
