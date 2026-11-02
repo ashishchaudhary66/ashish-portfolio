@@ -1,35 +1,36 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, AfterViewInit, OnDestroy } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
   year = new Date().getFullYear();
   menu = false;
   sending = false;
-  status = '';
+  status = "";
   error = false;
-  form = { name: '', email: '', message: '' };
+  form = { name: "", email: "", message: "" };
   private observer?: IntersectionObserver;
 
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver(
-      entries => entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          this.observer?.unobserve(entry.target);
-        }
-      }),
-      { threshold: 0.12 }
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            this.observer?.unobserve(entry.target);
+          }
+        }),
+      { threshold: 0.12 },
     );
 
-    document.querySelectorAll('.reveal').forEach(element => {
+    document.querySelectorAll(".reveal").forEach((element) => {
       this.observer?.observe(element);
     });
   }
@@ -43,22 +44,25 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.menu = false;
     const section = document.getElementById(sectionId);
     if (!section) return;
-    section.classList.add('visible');
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.history.replaceState(null, '', '#' + sectionId);
+    section.classList.add("visible");
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", "#" + sectionId);
   }
 
   send(): void {
-    this.status = '';
+    this.status = "";
     this.error = false;
 
-    const recipient = 'ashishkumarchaudhary66@gmail.com';
-    const subject = encodeURIComponent(`Portfolio enquiry from ${this.form.name}`);
+    const recipient = "ashishkumarchaudhary66@gmail.com";
+    const subject = encodeURIComponent(
+      `Portfolio enquiry from ${this.form.name}`,
+    );
     const body = encodeURIComponent(
-      `Name: ${this.form.name}\nEmail: ${this.form.email}\n\nMessage:\n${this.form.message}`
+      `Name: ${this.form.name}\nEmail: ${this.form.email}\n\nMessage:\n${this.form.message}`,
     );
 
     window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-    this.status = 'Your email app should open with your message. Please send it from there.';
+    this.status =
+      "Your email app should open with your message. Please send it from there.";
   }
 }
